@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Upload</title>
+</head>
+<body>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="image">Choose an image to upload:</label>
+        <input type="file" name="image" id="image">
+        <label for="watermark">Watermark text:</label>
+        <input type="text" name="watermark" id="watermark">
+        <button type="submit">Upload</button>
+    </form>     
+</body>
+</html>

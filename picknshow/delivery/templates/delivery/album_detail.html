@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+</head>
+<body>
+    <h1>{{ album.name }}</h1>
+    <div class="gallery">
+        {% for photo in photos %}
+            <div class="photo">
+                <img src="{{ photo.image.url }}" alt="Photo {{ forloop.counter }}">
+            </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>

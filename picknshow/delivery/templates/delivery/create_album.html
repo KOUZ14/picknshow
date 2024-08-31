@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Album</title>
+</head>
+<body>
+    <h1>Create New Album</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ album_form.as_p }}
+        {{ photo_form.as_p }}
+        <button type="submit">Create Album</button>
+    </form>
+</body>
+</html>
