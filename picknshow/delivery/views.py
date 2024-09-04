@@ -28,7 +28,7 @@ def user_login(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return redirect('create_album')
+            return redirect('album_list')
     else:
         form = CustomAuthenticationForm()
     return render(request, 'registration/login.html', {'form': form})
