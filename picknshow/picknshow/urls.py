@@ -16,20 +16,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from delivery import views
+from delivery import views as delivery_views
+from landing import views as landing_views
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('upload/', views.upload_photo, name='upload_photo'),
-    path('watermark/', views.watermark_photo, name='watermark_photo'),
-    path('albums/', views.album_list, name='album_list'),
-    path('albums/<int:album_id>/', views.album_detail, name='album_detail'),
-    path('albums/new/', views.create_album, name='create_album'),
-    path('register/', views.register, name='register'),
-    path('login/', views.user_login, name='login'),
-    path('logout/', views.user_logout, name='logout'),
+    path('upload/', delivery_views.upload_photo, name='upload_photo'),
+    path('watermark/', delivery_views.watermark_photo, name='watermark_photo'),
+    path('albums/', delivery_views.album_list, name='album_list'),
+    path('albums/<int:album_id>/', delivery_views.album_detail, name='album_detail'),
+    path('albums/new/', delivery_views.create_album, name='create_album'),
+    path('register/', delivery_views.register, name='register'),
+    path('login/', delivery_views.user_login, name='login'),
+    path('logout/', delivery_views.user_logout, name='logout'),
+    path('', landing_views.serve_template, name='home')
 
 ]
 
